@@ -22,7 +22,6 @@ public class AbstractBean_getMessage_41807df738_Test {
 
     @Before
     public void setup() {
-        abstractBean = new AbstractBean();
         facesContext = mock(FacesContext.class);
         bundle = mock(ResourceBundle.class);
     }

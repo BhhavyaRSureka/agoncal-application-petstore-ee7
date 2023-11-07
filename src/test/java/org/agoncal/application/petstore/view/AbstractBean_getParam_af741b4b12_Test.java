@@ -21,7 +21,6 @@ public class AbstractBean_getParam_af741b4b12_Test {
 
     @BeforeEach
     public void setup() {
-        abstractBean = new AbstractBean();
         facesContext = mock(FacesContext.class);
         externalContext = mock(ExternalContext.class);
         requestParameters = new HashMap<>();
@@ -29,7 +28,7 @@ public class AbstractBean_getParam_af741b4b12_Test {
         when(facesContext.getExternalContext()).thenReturn(externalContext);
         when(externalContext.getRequestParameterMap()).thenReturn(requestParameters);
 
-        FacesContext.setCurrentInstance(facesContext);
+        when(FacesContext.getCurrentInstance()).thenReturn(facesContext);
     }
 
     @Test

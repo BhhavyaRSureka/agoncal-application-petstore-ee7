@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import java.util.Objects;
 
 public class Product_hashCode_5a2657087a_Test {
 

@@ -28,7 +28,6 @@ public class AbstractBean_addErrorMessage_c5f6545bb7_Test {
 
     @Before
     public void setUp() {
-        abstractBean = new AbstractBean();
         when(facesContext.getViewRoot().getLocale()).thenReturn(Locale.US);
         when(facesContext.getCurrentInstance()).thenReturn(facesContext);
         when(ResourceBundle.getBundle(anyString(), any(Locale.class), any(ClassLoader.class))).thenReturn(resourceBundle);

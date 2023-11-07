@@ -26,7 +26,6 @@ public class AbstractBean_addWarningMessage_863516008c_Test {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        abstractBean = new AbstractBean();
     }
 
     @Test

@@ -4,7 +4,7 @@ package org.agoncal.application.petstore.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrderLine_hashCode_5a2657087a_Test {
 

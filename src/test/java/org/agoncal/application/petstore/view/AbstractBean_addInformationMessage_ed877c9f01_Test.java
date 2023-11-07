@@ -22,8 +22,7 @@ public class AbstractBean_addInformationMessage_ed877c9f01_Test {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        abstractBean = new AbstractBean();
-        FacesContext.setCurrentInstance(facesContext);
+        when(FacesContext.getCurrentInstance()).thenReturn(facesContext);
     }
 
     @Test
@@ -31,7 +30,7 @@ public class AbstractBean_addInformationMessage_ed877c9f01_Test {
         String message = "testMessage";
         Object[] args = new Object[]{"arg1", "arg2"};
         String formattedMessage = "testMessage arg1 arg2";
-        when(facesContext.getMessage(facesContext, message, args)).thenReturn(formattedMessage);
+        when(facesContext.getApplication().getResourceBundle(facesContext, "messages").getString(message)).thenReturn(formattedMessage);
         abstractBean.addInformationMessage(message, args);
         verify(facesContext, times(1)).addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, formattedMessage, null));
     }
@@ -40,9 +39,8 @@ public class AbstractBean_addInformationMessage_ed877c9f01_Test {
     public void testAddInformationMessage_NoArgs() {
         String message = "testMessage";
         String formattedMessage = "testMessage";
-        when(facesContext.getMessage(facesContext, message)).thenReturn(formattedMessage);
+        when(facesContext.getApplication().getResourceBundle(facesContext, "messages").getString(message)).thenReturn(formattedMessage);
         abstractBean.addInformationMessage(message);
         verify(facesContext, times(1)).addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, formattedMessage, null));
     }
-
 }
