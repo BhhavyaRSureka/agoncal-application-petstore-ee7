@@ -32,7 +32,7 @@ public class categoriesPostTest {
         RestAssured.baseURI = System.getenv("BASE_URL");  
   
         // Read CSV file  
-        try (BufferedReader reader = new BufferedReader(new FileReader("src\test\java\org\agoncal\application\RoostTest\categoriesPostTest.csv"))) {  
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/test/java/org/agoncal/application/RoostTest/categoriesPostTest.csv"))) {  
             String headerLine = reader.readLine();  
             String[] headers = headerLine.split(",");  
   
@@ -53,7 +53,7 @@ public class categoriesPostTest {
                 .then() 
                 .extract().response();    
          
-                if (response.statusCode() == default) {
+                if (response.statusCode() == 200) {
 					System.out.println("Description: successful operation");
 				}
   

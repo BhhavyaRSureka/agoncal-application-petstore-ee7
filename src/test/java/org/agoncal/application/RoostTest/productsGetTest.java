@@ -32,7 +32,7 @@ public class productsGetTest {
         RestAssured.baseURI = System.getenv("BASE_URL");  
   
         // Read CSV file  
-        try (BufferedReader reader = new BufferedReader(new FileReader("src\test\java\org\agoncal\application\RoostTest\productsGetTest.csv"))) {  
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/test/java/org/agoncal/application/RoostTest/productsGetTest.csv"))) {  
             String headerLine = reader.readLine();  
             String[] headers = headerLine.split(",");  
   
@@ -48,8 +48,6 @@ public class productsGetTest {
                 
   
                 Response response = given()
-				.pathParam("start", map.get("start") != null ? map.get("start") : "")
-				.pathParam("max", map.get("max") != null ? map.get("max") : "")
                 .when()
                 .get("/products")  
                 .then() 

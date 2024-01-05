@@ -32,7 +32,7 @@ public class categories_idPutTest {
         RestAssured.baseURI = System.getenv("BASE_URL");  
   
         // Read CSV file  
-        try (BufferedReader reader = new BufferedReader(new FileReader("src\test\java\org\agoncal\application\RoostTest\categories_idPutTest.csv"))) {  
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/test/java/org/agoncal/application/RoostTest/categories_idPutTest.csv"))) {  
             String headerLine = reader.readLine();  
             String[] headers = headerLine.split(",");  
   
@@ -48,12 +48,13 @@ public class categories_idPutTest {
                 
   
                 Response response = given()
+                .pathParam("id", map.get("id") != null ? map.get("id") : "")
                 .when()
                 .put("/categories/{id}")  
                 .then() 
                 .extract().response();    
          
-                if (response.statusCode() == default) {
+                if (response.statusCode() == 200) {
 					System.out.println("Description: successful operation");
 				}
   
