@@ -1,0 +1,11 @@
+start,max,statusCode,scenario
+10,50,200,successful operation
+20,60,200,successful operation
+30,70,200,successful operation
+40,80,250,successful operation
+50,90,299,successful operation
+60,100,300,"random scenario"
+70,110,400,"random scenario"
+80,120,500,"random scenario"
+90,130,600,"random scenario"
+100,140,700,"random scenario"

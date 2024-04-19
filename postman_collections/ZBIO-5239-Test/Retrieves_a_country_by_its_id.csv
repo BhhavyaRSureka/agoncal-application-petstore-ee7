@@ -1,0 +1,6 @@
+id,statusCode,scenario
+1,500,"successful operation"
+2,500,"successful operation"
+3,500,"successful operation"
+4,500,"successful operation"
+5,500,"successful operation"
